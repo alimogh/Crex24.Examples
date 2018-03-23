@@ -13,6 +13,7 @@ Don't forget to set api keys!
 # build and run python example
 
 You need only python 3
+
 If you get error **"ModuleNotFoundError: No module named 'requests'** please install module requests via pip **pip install requests** (linux with sudo)
 
 Go into python folder and execute commands: 
