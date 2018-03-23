@@ -20,6 +20,6 @@ Go into python folder and execute commands:
 Don't forget to set api keys!
 
 
-If you get error **"ModuleNotFoundError: No module named 'requests'** please install module requests via pip 
+If you get error **"ModuleNotFoundError: No module named 'requests'** please install module **requests** via pip: 
 
 **pip install requests** (linux with sudo)
