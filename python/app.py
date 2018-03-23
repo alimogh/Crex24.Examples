@@ -8,11 +8,9 @@ import time
 from hashlib import sha512
 
 tradingApiUrl = "https://api.crex24.com/CryptoExchangeService/BotTrade/"
-apiKey = "1cc34223-37e8-49f3-a5bd-394ba25bf853"
-privateKey = "Jpm/Ua6K2A5Fhq5iYQen3KvM4blhEUaTzH+r5i6xTGhdYzyapyyr1K/FHNrCx6ESG86V5erKBpC4j1dv/a8Uiw=="
+apiKey = "your_api_key"
+privateKey = "your_private_key"
 nonce = 0
-
-print("Crex24 examples")
 
 
 def getNonce():
@@ -27,26 +25,34 @@ def getNonce():
 
 def sendRequest(url, data):
     data["Nonce"] = getNonce()
+    dataJsonStr = json.dumps(data, separators=(',', ':'))
+    signature = createHash(dataJsonStr)
     headers = {
-        "Content-Type": "application/json",
         "UserKey": apiKey,
-        "Sign": createHash(data),
-        }
-    r = requests.post(tradingApiUrl + url, data=data, headers=headers)
+        "Sign": signature
+    }
+    r = requests.post(tradingApiUrl + url, data=dataJsonStr, headers=headers)
     return r.json()
 
 
-def createHash(data):
-    hmacInstance = hmac.new(base64.b64decode(privateKey), digestmod=sha512)
-    hmacInstance.update(json.dumps(data).encode(encoding="ascii"))
-    result = base64.encodebytes(hmacInstance.digest()).decode("ascii")
-    print(result)
-    #result = result[:len(result) - 1]
-    return result
+def createHash(dataJsonStr):
+    key = base64.b64decode(privateKey)
+    jsonBytes = bytes(dataJsonStr, "ascii")
+    hmac_result = hmac.new(key, jsonBytes, sha512)
+    return base64.b64encode(hmac_result.digest()).decode()
 
+
+print("Let's make some requests...\n")
 
 response = sendRequest("ReturnBalances", {
     "Names": ["BTC", "LTC"],
     "NeedNull": "true"
 })
-print("Response: ", response)
+print("ReturnBalances response:", response)
+
+response = sendRequest("ReturnOpenOrders", {
+    "Pairs": ["BTC_LTC", "BTC_ETH"],
+})
+print("ReturnOpenOrders response: ", response)
+
+print("\nNow you know how to request what you want!")

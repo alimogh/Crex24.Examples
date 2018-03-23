@@ -5,7 +5,7 @@ const crypto = require("crypto");
  */
 const tradingApiUrl = "https://api.crex24.com/CryptoExchangeService/BotTrade/";
 const apiKey = "your_api_key";
-const privateKey = "your_private_key";
+const privateKey = "your_private_key"
 
 async function main() {
     console.log("Let's make some requests...\n")
