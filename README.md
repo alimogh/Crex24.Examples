@@ -14,9 +14,11 @@ Don't forget to set api keys!
 
 You need only python 3
 
-If you get error **"ModuleNotFoundError: No module named 'requests'** please install module requests via pip **pip install requests** (linux with sudo)
-
 Go into python folder and execute commands: 
 1. python app.py
 
 Don't forget to set api keys!
+
+If you get error **"ModuleNotFoundError: No module named 'requests'** please install module requests via pip 
+
+**pip install requests** (linux with sudo)
