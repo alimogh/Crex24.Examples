@@ -1,6 +1,10 @@
 # Crex24.Examples
 
-# build and run js example
+Examples of usage BotTrade API with authentification via HMACSHA512 signature.
+
+
+
+#### build and run js example
 
 You need only node.js (8 LTS for example)
 
@@ -10,7 +14,7 @@ Go into js folder and execute commands:
 
 Don't forget to set api keys!
 
-# build and run python example
+#### build and run python example
 
 You need only python 3
 
