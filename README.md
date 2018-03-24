@@ -1,6 +1,6 @@
 # Crex24.Examples
 
-Examples of usage BotTrade API with authentification via HMACSHA512 signature.
+Examples of usage BotTrade API with authentication via HMACSHA512 signature.
 
 
 
