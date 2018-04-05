@@ -14,7 +14,7 @@ Go into js folder and execute commands:
 
 Don't forget to set api keys!
 
-#### build and run python example
+#### run python example
 
 You need only python 3
 
@@ -27,3 +27,12 @@ Don't forget to set api keys!
 If you get error **"ModuleNotFoundError: No module named 'requests'** please install module **requests** via pip: 
 
 **pip install requests** (linux with sudo)
+
+#### run php example
+
+Works with php version 7.1
+
+Go into php folder and execute commands: 
+1. php -f app.php
+
+Don't forget to set api keys!
