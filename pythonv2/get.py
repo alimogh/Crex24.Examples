@@ -28,4 +28,4 @@ try:
     response = bytes.decode(urlopen(request).read())
     print(response)
 except HTTPError as e: 
-    print(e)
+    print(bytes.decode(e.read()))
