@@ -25,13 +25,12 @@ request.add_header("X-CREX24-API-NONCE", nonce)
 request.add_header("X-CREX24-API-SIGN", signature)
 
 try:
-    connection = urlopen(request)
-    response = bytes.decode(connection.read())
-    status = connection.getcode()
-    print(response)
+    response = urlopen(request)
 except HTTPError as e:
-    error = bytes.decode(e.read())
-    status = e.getcode()
-    print(error)
+    response = e
+
+status = response.getcode()
+body = bytes.decode(response.read())
 
 print("Status code: " + str(status))
+print(body)
