@@ -29,6 +29,9 @@ try:
     response = bytes.decode(connection.read())
     status = connection.getcode()
     print(response)
-    print("Status code: " + str(status))
 except HTTPError as e:
-    print(bytes.decode(e.read()))
+    error = bytes.decode(e.read())
+    status = e.getcode()
+    print(error)
+
+print("Status code: " + str(status))
