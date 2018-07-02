@@ -24,8 +24,11 @@ request.add_header("X-CREX24-API-KEY", apiKey)
 request.add_header("X-CREX24-API-NONCE", nonce)
 request.add_header("X-CREX24-API-SIGN", signature)
 
-try: 
-    response = bytes.decode(urlopen(request).read())
+try:
+    connection = urlopen(request)
+    response = bytes.decode(connection.read())
+    status = connection.getcode()
     print(response)
-except HTTPError as e: 
+    print("Status code: " + str(status))
+except HTTPError as e:
     print(bytes.decode(e.read()))
