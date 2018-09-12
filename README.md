@@ -36,3 +36,11 @@ Go into php folder and execute commands:
 1. php -f app.php
 
 Don't forget to set api keys!
+
+#### run perl example
+
+If necessary, install additional perl modules. This can be done with the cpan command:<br>
+cpan -i Digest::SHA MIME::Base64 LWP::UserAgent JSON Data::Dumper
+
+1. Go to the perl folder and edit the api keys in the app.pl file.
+2. perl app.pl
