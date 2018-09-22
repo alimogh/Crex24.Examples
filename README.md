@@ -42,5 +42,5 @@ Don't forget to set api keys!
 If necessary, install additional perl modules. This can be done with the cpan command:<br>
 cpan -i Digest::SHA MIME::Base64 LWP::UserAgent JSON Data::Dumper
 
-1. Go to the perl folder and edit the api keys in the app.pl file.
-2. perl app.pl
+1. Go to the perl folder and edit the api keys in the app.pl and app_API_V2_beta.pl files.
+2. `perl app.pl` or `perl app_API_V2_beta.pl`
