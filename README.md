@@ -36,3 +36,11 @@ Go into php folder and execute commands:
 1. php -f app.php
 
 Don't forget to set api keys!
+
+#### run R example
+
+If necessary, install additional R packages. This can be done with the command:<br>
+/usr/bin/R -e 'install.packages(c("jsonlite","RCurl","digest"))'
+
+1. Go to the R folder and edit the api keys in the app.R, app_API_V2_beta.R files.
+2. `/usr/bin/R --vanilla -f app.R` or `/usr/bin/R --vanilla -f app_API_V2_beta.R`
