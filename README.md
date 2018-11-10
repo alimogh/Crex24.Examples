@@ -37,6 +37,14 @@ Go into php folder and execute commands:
 
 Don't forget to set api keys!
 
+#### run perl example
+
+If necessary, install additional perl modules. This can be done with the cpan command:<br>
+cpan -i Digest::SHA MIME::Base64 LWP::UserAgent JSON Data::Dumper
+
+1. Go to the perl folder and edit the api keys in the app.pl and app_API_V2_beta.pl files.
+2. `perl app.pl` or `perl app_API_V2_beta.pl`
+
 #### run R example
 
 If necessary, install additional R packages. This can be done with the command:<br>
@@ -44,3 +52,4 @@ If necessary, install additional R packages. This can be done with the command:<
 
 1. Go to the R folder and edit the api keys in the app.R, app_API_V2_beta.R files.
 2. `/usr/bin/R --vanilla -f app.R` or `/usr/bin/R --vanilla -f app_API_V2_beta.R`
+
